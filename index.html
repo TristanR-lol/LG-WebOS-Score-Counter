@@ -5,11 +5,41 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ScorIo</title>
-
+        <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>
         <h1 class="Header" id="Main-Header">ScorIo</h1>
+
+        <div id="TeamContainer">
+
+            <div class="Team" id="TeamRed">
+
+                <h2 class="ClassTitle">Red Team</h2>
+                <h1 class="ScoreCounter" id="RedScoreCounter">0</h1>
+
+            </div>
+
+            <div class="Team" id="TeamGreen">
+
+                <h2 class="ClassTitle">Green Team</h2>
+                <h1 class="ScoreCounter" id="GreenScoreCounter">0</h1>
+
+                <div class="ScoreButtons">
+                    <button class="ScoreButton" id="GreenStepButton">+1</button>
+                    <button class="ScoreButton" id="GreenBackButton">-1</button>
+                </div>
+
+            </div>
+            
+            <div class="Team" id="TeamBlue">
+
+                <h2 class="ClassTitle">Blue Team</h2>
+                <h1 class="ScoreCounter" id="BlueScoreCounter">0</h1>
+
+            </div>
+
+        </div>
     </body>
 
 </html>
