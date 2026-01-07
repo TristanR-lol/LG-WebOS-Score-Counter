@@ -91,3 +91,11 @@
     transform: translate(0%, -20%);
     scale: 1.1;
 }
+
+.Ranking {
+    color: var(--colours-white);
+    font-family: var(--fonts-primary);
+    font-size: 3vw;
+    margin-bottom: -10%;
+    margin-top: -10%;
+}
