@@ -4,16 +4,19 @@
 let RedStepButton = document.getElementById("RedStepButton");
 let RedBackButton = document.getElementById("RedBackButton");
 let RedScoreCounter = document.getElementById("RedScoreCounter");
+let RedTeam = document.getElementById("TeamRed");
 
 // Blue
 let BlueStepButton = document.getElementById("BlueStepButton");
 let BlueBackButton = document.getElementById("BlueBackButton");
 let BlueScoreCounter = document.getElementById("BlueScoreCounter");
+let BlueTeam = document.getElementById("TeamBlue");
 
 // Green
 let GreenStepButton = document.getElementById("GreenStepButton");
 let GreenBackButton = document.getElementById("GreenBackButton");
 let GreenScoreCounter = document.getElementById("GreenScoreCounter");
+let GreenTeam = document.getElementById("TeamGreen");
 
 
 
@@ -86,3 +89,80 @@ GreenBackButton.addEventListener("click", () => {
     GreenScoreCounter.innerText = GreenScore;
     updateRankings();
 });
+
+// System Controls
+
+let Selection = "Right"; // Default Selection
+
+function updateSelectionHighlight() {
+    if (Selection === "Right") {
+        BlueTeam.setAttribute("hover", "true");
+        RedTeam.removeAttribute("hover");
+        GreenTeam.removeAttribute("hover");
+    } else if (Selection === "Left") {
+        RedTeam.setAttribute("hover", "true");
+        BlueTeam.removeAttribute("hover");
+        GreenTeam.removeAttribute("hover");
+    } else if (Selection === "Center") {
+        GreenTeam.setAttribute("hover", "true");
+        BlueTeam.removeAttribute("hover");
+        RedTeam.removeAttribute("hover");
+    }
+}
+
+window.addEventListener("keydown", function(e) {
+    updateRankings();
+    switch (e.keyCode) {
+
+        case 39: // Right
+            if (Selection === "Right") {
+                Selection = "Right";
+            } else if (Selection === "Left") {
+                Selection = "Center";
+            } else if (Selection === "Center") {
+                Selection = "Right";
+            }
+            updateSelectionHighlight();
+            break;
+
+        case 38: // Up
+            if (Selection === "Right") {
+                BlueScore += 1;
+                BlueScoreCounter.innerText = BlueScore;
+            } else if (Selection === "Left") {
+                RedScore += 1;
+                RedScoreCounter.innerText = RedScore;
+            } else if (Selection === "Center") {
+                GreenScore += 1;
+                GreenScoreCounter.innerText = GreenScore;
+            }
+            updateSelectionHighlight();
+            break;
+
+        case 37: // Left
+            if (Selection === "Right") {
+                Selection = "Center";
+            } else if (Selection === "Left") {
+                Selection = "Left";
+            } else if (Selection === "Center") {
+                Selection = "Left";
+            }
+            updateSelectionHighlight();
+            break;
+
+        case 40: // Down
+            
+            if (Selection === "Right") {
+                BlueScore -= 1;
+                BlueScoreCounter.innerText = BlueScore;
+            } else if (Selection === "Left") {
+                RedScore -= 1;
+                RedScoreCounter.innerText = RedScore;
+            } else if (Selection === "Center") {
+                GreenScore -= 1;
+                GreenScoreCounter.innerText = GreenScore;
+            }
+            updateSelectionHighlight();
+            break;
+    }
+});   
