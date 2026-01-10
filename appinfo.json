@@ -1,38 +1,10 @@
 {
-    "id": "com.blox.scor.scorio",
-    "title": "ScorIo",
-    "main": "index.html",
-    "icon": "assets/logo_small.png",
-    "largeIcon": "assets/logo_large.png",
-    "type": "web",
-    "vendor": "blox",
-    "version": "1.0.0",
-    "appDescription": "ScorIo: A simple Team scoreboard.",
-    "resolution": "1920x1080",
-    "bgColor": "red",
-    "iconColor": "red",
-    "bgImage": "AppName_Preview.png",
-    "closeOnRotation": false,
-    "disableBackHistoryAPI": false,
-    "handlesRelaunch": false,
-    "splashBackground": "AppName_Splash.png",
-    "splashColor": "#ffff",
-    "splashFitModeOnPortrait": "width",
-    "requiredMemory": 20,
-    "supportPortraitMode": true,
-    "supportTouchMode": "virtual",
-    "transparent": false,
-    "virtualTouch": {
-        "verticalThreshold": 20,
-        "horizontalThreshold": 50,
-        "positionEventOnPress": true,
-        "shortTouchThreshold": 30
-    },
-    "accessibility": {
-      "supportsAudioGuidance": true
-    },
-    "screenSaverProperties": {
-      "preferredType": 3
-    },
-    "useGalleryMode": true
+  "id": "com.blox.scorio",
+  "version": "1.0.0",
+  "vendor": "blox",
+  "type": "web",
+  "main": "index.html",
+  "title": "ScorIo",
+  "icon": "assets/logo_small.png",
+  "largeIcon": "assets/logo_large.png"
 }
